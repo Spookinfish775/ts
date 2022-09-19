@@ -1,0 +1,58 @@
+@import "~/assets/fonts/stylesheet.css";
+
+@mixin max($media) {
+  @media only screen and (max-width: $media) {
+    -webkit-min-device-pixel-ratio: 2;
+    @content;
+  }
+}
+
+@mixin min($media) {
+  @media only screen and (min-width: $media) {
+    -webkit-min-device-pixel-ratio: 2;
+    @content;
+  }
+}
+
+@mixin minmax($min, $max) {
+  @media only screen and (min-width: $min) and (max-width: $max) {
+    -webkit-min-device-pixel-ratio: 2;
+    @content;
+  }
+}
+
+* {
+  scroll-behavior: smooth !important;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  scrollbar-width: none;
+  font-family: gilroy !important;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+
+  &::-moz-scrollbar {
+    display: none;
+    width: 0;
+  }
+}
+
+html,
+body {
+  width: 100%;
+  min-height: 100vh;
+  font-family: gilroy !important;
+  background-color: #FAF9FF;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.container {
+  margin: 0 auto;
+  width: 1280px;
+}
